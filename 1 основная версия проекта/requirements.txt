@@ -1,0 +1,14 @@
+# библиотеки использованные в проекте requirements.txt
+from flask import Flask, jsonify, request, redirect, url_for, session, render_template, flash
+from flask_restful import Api, Resource
+import json
+-
+from flask_wtf import FlaskForm
+from wtforms import StringField, IntegerField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Email, Length
+-
+import os
+import sqlalchemy.orm as orm
+import sqlalchemy.ext.declarative as dec
+from werkzeug.security import generate_password_hash, check_password_hash
+from forms import RegistrationForm

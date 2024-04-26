@@ -1,0 +1,53 @@
+<!-- Этот HTML-код представляет собой форму регистрации (registration_form.html) для веб-приложения. Вот что он делает:
+
+В <h1> задается заголовок "Registration Form".
+Подключается внешний файл стилей styles.css, который находится в папке static/css внутри проекта. Путь к этому файлу формируется с помощью функции url_for, которая позволяет создать URL для статических файлов, в данном случае CSS-файла.
+Создается форма с методом post, который будет отправлять данные на сервер для обработки. Атрибут action формы пустой, что означает, что данные будут отправлены на текущую страницу.
+Используется объект формы, который, вероятно, был создан с использованием Flask-WTF. Для каждого поля формы выводится его метка (label) и само поле ввода (input). Каждое поле имеет свой класс для применения стилей из CSS.
+Для каждого поля формы, если есть ошибки валидации, они выводятся под соответствующим полем в виде списка <ul> с классом text-danger, а ошибки - в виде элементов <li>.
+В конце формы размещается кнопка отправки формы с классом btn btn-primary.
+Этот HTML-код представляет собой форму для регистрации нового пользователя с полями для ввода электронной почты, пароля, фамилии, имени, возраста и адреса, а также кнопкой для отправки данных формы на сервер. -->
+
+
+<h1>Registration Form</h1>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.email.label(class_="form-control-label") }}
+        {{ form.email(class_="form-control form_for_login", type="email", placeholder="Email") }}
+    </div>
+    <div class="form-group">
+        {{ form.password.label(class_="form-control-label") }}
+        {{ form.password(class_="form-control form_for_password", type="password", placeholder="Password") }}
+    </div>
+    <div class="form-group">
+        {{ form.surname.label(class_="form-control-label") }}
+        {{ form.surname(class_="form-control form_for_input", placeholder="Surname") }}
+    </div>
+    <div class="form-group">
+        {{ form.name.label(class_="form-control-label") }}
+        {{ form.name(class_="form-control form_for_input", placeholder="Name") }}
+    </div>
+    <div class="form-group">
+        {{ form.age.label(class_="form-control-label") }}
+        {{ form.age(class_="form-control form_for_input", placeholder="Age") }}
+    </div>
+    <div class="form-group">
+        {{ form.address.label(class_="form-control-label") }}
+        {{ form.address(class_="form-control form_for_input", placeholder="Address") }}
+    </div>
+    <div>{{ form.submit(type="submit", class_="btn btn-primary") }}</div>
+    
+    {% for field, errors in form.errors.items() %}
+        <ul class="text-danger">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+</form>
+
+
+

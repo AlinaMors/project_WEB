@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+
+
+}
+.title-h1{
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+}
+.title-h6{
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+
+}
+.title-carddes{
+    font-family: 'Lora', serif;
+    font-size: 11px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    fill: none;
+}
+
+/* Этот код представляет собой таблицу стилей (CSS) для веб-страницы. Вот что он делает:
+
+Импортируются два шрифта с веб-сервера Google Fonts: "Playfair Display" с весом 500 и "Roboto", а также "Lora" с весом 500.
+Задаются стили для элемента body: шрифт "Roboto" (sans-serif) с размером 15 пикселей.
+Задаются стили для элемента с классом title-h1: размер шрифта 50 пикселей и шрифт "Playfair Display".
+Задаются стили для элемента с классом title-h6: шрифт "Playfair Display" и размер шрифта 13 пикселей.
+Задаются стили для элемента с классом title-carddes: шрифт "Lora" и размер шрифта 11 пикселей.
+Задаются стили для элементов с классом icon: ширина и высота 20 пикселей, отступ слева 5 пикселей и цвет заливки не задан (fill: none).
+Этот CSS-код определяет внешний вид различных элементов веб-страницы, таких как заголовки, текст и иконки. Он использует различные шрифты для создания желаемого визуального эффекта. */

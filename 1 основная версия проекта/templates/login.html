@@ -1,0 +1,44 @@
+<!-- login.html -->
+
+
+<!-- Этот HTML-код представляет собой страницу входа (login.html) для веб-приложения. Вот что он делает:
+
+Объявляется DOCTYPE и устанавливаются основные метаданные, такие как кодировка символов и масштабирование для мобильных устройств.
+Устанавливается заголовок страницы "Login".
+Подключается внешний файл стилей styles.css, который находится в папке static/css внутри проекта. Путь к этому файлу формируется с помощью функции url_for, которая позволяет создать URL для статических файлов, в данном случае CSS-файла.
+Создается контейнер с классом container, внутри которого располагается форма входа.
+В заголовке <h1> отображается текст "Login".
+Внутри формы <form> задаются два поля ввода: для ввода электронной почты (<input type="email">) и для ввода пароля (<input type="password">). Каждое поле имеет класс form-control для применения стилей из CSS.
+Создается кнопка отправки формы с текстом "Login" и классом btn btn-primary для применения стилей из CSS.
+Добавляется текст с ссылкой для регистрации нового аккаунта. Ссылка формируется с помощью функции url_for, указывающей на маршрут register в приложении.
+Этот HTML-код представляет собой простую страницу входа в систему с полями для ввода электронной почты и пароля, кнопкой для отправки данных формы и ссылкой для перехода к регистрации нового пользователя. -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="{{ url_for('login') }}" method="POST">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+        </form>
+    </div>
+</body>
+</html>
+
+
